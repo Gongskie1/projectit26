@@ -1,0 +1,162 @@
+.buttons-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+ 
+  }
+.buttons-container button {
+    padding: 10px 20px;
+    cursor: pointer;
+    color:black;
+    background: transparent;
+    border-radius: 10px;
+    font-size: 19px;
+}
+
+.payroll-container {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    line-height: 24px;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    height: 917px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+}
+h1{
+    margin-bottom: 26px;
+    font-size: 40px;
+    font-weight: 800;
+}
+h2{
+    text-align: end;
+    margin-top: -90px;
+    font-size: 30px;
+    margin-bottom: 79px;
+    color: black;
+    font-weight: 700;
+}
+p{
+    font-size: 17px;
+}
+.info{
+    border-collapse: collapse;
+    font-family: sans-serif;
+    min-width: 400px;
+    margin-left:403px;
+    margin-block: auto;
+}
+.info thead tr {
+    background-color:#7FB3D5;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    font-weight:600px;
+}
+.info th,
+.info td {
+    padding: 12px 15px;
+}
+.info td{
+    background: #F2F4F4;
+    font-size: 15px;
+}
+
+.emp{
+    margin-top:-100px;
+    
+}
+.emp thead tr {
+    background-color: #7FB3D5;
+    color: black;
+    text-align: left;
+    font-size: 15px;
+    font-weight:700;
+}
+.emp th,
+.emp td {
+    padding: 12px 15px;
+}
+.emp td{
+    font-size: 20px;
+    
+}
+
+
+.earnings {
+    border-collapse: collapse;
+    margin: 41px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: -webkit-fill-available;
+
+}
+
+.earnings thead tr {
+    background-color:#2E96DF ;
+    color: black;
+    text-align: left;
+    text-transform: uppercase;
+}
+.earnings th,
+.earnings td {
+    padding: 12px 15px;
+}
+.earnings tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.earnings tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.deductions {
+    border-collapse: collapse;
+    margin: 41px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: -webkit-fill-available;
+
+}
+.deductions thead tr {
+    background-color: #2E96DF;
+    color: black;
+    text-align: left;
+    text-transform: uppercase;
+}
+.deductions th,
+.deductions td {
+    padding: 12px 15px;
+}
+.deductions tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.deductions tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.net_pay{
+    border-collapse: collapse;
+    font-size: 18px;
+    font-family: sans-serif;
+    min-width: 400px;
+    margin-left:403px;
+}
+.net_pay thead tr {
+    background-color: #ABB2B9;
+    color: black;
+
+}
+.net_pay th{
+    padding: 12px 15px;
+    
+}

@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    
+    background: #C0C0C0;
+    overflow: hidden;
+
+}
+.container{
+    max-width: 440px;
+    padding: 0 20px; 
+    margin: 170px auto;
+}
+.wrapper{
+    width: 380px;
+    background:#fff ;
+    border-radius: 5px;
+    height:350px;
+}
+.wrapper .title{
+    line-height: 90px;
+    background: white;
+   text-align: center;
+    border-radius: 5px 5px 0 0;
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+    border-bottom: groove;
+}
+
+.wrapper form{
+    padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+    height: 45px;
+    margin-bottom:15px ;
+    position: relative;
+}
+.wrapper form .row input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left:13px ;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}   
+.wrapper form .pass{
+    margin: 18px 0 20px 0;
+
+}
+.wrapper form .pass a{
+    color: black;
+    font-size: 17px;
+    text-decoration: none;
+
+}
+.wrapper form .pass a:hover{
+    text-decoration: underline;
+
+}
+.wrapper form .btn input{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    background: royalblue;
+    cursor: pointer;
+}
