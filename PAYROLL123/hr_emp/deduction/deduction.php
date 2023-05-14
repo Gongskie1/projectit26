@@ -104,22 +104,22 @@
         <div>
           <span>
             <p>SSS:</p>  
-            <input type="number" name="SSS" value="0">
+            <input type="number" name="SSS" required>
           </span>
 
           <span>
             <p>Pag-Ibig:</p>  
-            <input type="number" name="love" value="0">
+            <input type="number" name="love"  required>
           </span>
 
           <span>
             <p>Tax:</p> 
-            <input type="number" name="tax" value="0">
+            <input type="number" name="tax"  required>
           </span>
 
           <span>
             <p>Philhealth:</p>  
-            <input type="number" name="Philhealth" value="0">
+            <input type="number" name="Philhealth"  required>
           </span>
         </div>
 

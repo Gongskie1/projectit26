@@ -1,4 +1,5 @@
 <?php include 'conn.php';
+      include 'editAttendance.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +25,7 @@
                 <th>Log-in</th>
                 <th>Logout Time</th>
                 <th>Attendance_type</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>              
@@ -37,16 +39,25 @@
                   if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                      echo "<tr>";
-                      echo "<th>$row[empID]</th>";
-                      echo "<th>$row[Fname]  $row[Lname]</th>";
-                      echo "<th>$row[position]</th>";
-                      echo "<th>$row[Date]</th>";
-                      echo "<th>$row[Time_In]</th>";
-                      echo "<th>$row[Time_Out]</th>";
-                      echo "<th>$row[Attendance_Type]</th>";
-                      echo "</tr>";
+                      
+                      ?>
 
+                      <tr>
+                      <th><?php echo $row['empID'] ?></th>
+                      <th><?php echo $row['Fname'] . $row['Lname'];?> </th>
+                      <th><?php echo $row['position']?></th>
+                      <th><?php echo $row['Date']?></th>
+                      <th><?php echo $row['Time_In']?></th>
+                      <th><?php echo $row['Time_Out']?></th>
+                      <th><?php echo $row['Attendance_Type']?></th>
+                      <th>
+                          <form method='post' style='display:flex;'>
+                            <button class="Attendance" id="Attendance" name="Attendance" style="margin-right: 5px;">edit</button>
+                            <button>delete</button>
+                          </form>
+                      </th>
+                      </tr>
+                    <?php 
                     }
                   } else {
                     echo "0 results";
@@ -60,5 +71,20 @@
     </section>
   </div>
 
+
+  <script>
+    $(document).ready(function(){
+      $(".Attendance").click(function(){
+
+        alert('lezzgow');
+        
+        
+
+      });
+    });
+  </script>
+
+
 </body>
 </html>
+

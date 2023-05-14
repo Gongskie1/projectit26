@@ -12,27 +12,43 @@ if (isset($_POST['save'])) {
 
 
 
+  $queryE = "SELECT * FROM addemployee WHERE email='$email'";
+  $queryU = "SELECT * FROM addemployee WHERE username='$username'";
+  
 
-  $sql = "INSERT INTO `addemployee`
-  (`Fname`, `Lname`, `gender`, `rate`, `position`, `email`, `username`, `password`) 
-  VALUES (
-  '$Fname',
-  '$Lname',
-  '$gender',
-  '$rate',
-  '$position',
-  '$email',
-  '$username',
-  '$password')";
+  $resultE = $conn->query($queryE);
+  $resultU = $conn->query($queryU);
 
 
+if ($resultE) {
 
-if ($conn->query($sql) === TRUE ) {
-  echo "New record created successfully";
+  if (mysqli_num_rows($resultE) > 0) {
+      echo  "<script>alert('The Email is already Exist')</script>";
+  }else if (mysqli_num_rows($resultU) > 0) {
+      echo  "<script>alert('The Username is already Exist')</script>";
+  }else {
+    $sql = "INSERT INTO `addemployee`
+    (`Fname`, `Lname`, `gender`, `rate`, `position`, `email`, `username`, `password`) 
+    VALUES (
+    '$Fname',
+    '$Lname',
+    '$gender',
+    '$rate',
+    '$position',
+    '$email',
+    '$username',
+    '$password')";
 
+    if ($conn->query($sql) === TRUE) {
+      echo "<script>alert('User Inserted Successfully')</script>";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+  }
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo 'Error: ' . $sql . "<br>" . $conn->error;
 }
+
 
 $conn->close();
 }
