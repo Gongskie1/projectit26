@@ -59,8 +59,9 @@
     </ul>
   </div>
   
-  <section class="home-section"><nav class="navbar navbar-dark" style="background:#11101D; height:70px; padding:10px; border-radius:0">
-  <a class="navbar-brand" style="color:white; font-size:30px; font-weight:bold; font-family: 'Poppins', sans-serif; border-radius: 0px;">123 Company</a>    
+  <section class="home-section"><nav class="navbar navbar-dark" style="background:#11101D; height:70px; padding:10px; border-radius:0 ;display: flex; align-items: center;">
+  <div style=" border-radius: 50%;"><img src="logo-removebg-preview (1).png" alt="logo"></div>
+  <a class="navbar-brand" style="color:white; font-size:30px; font-weight:bold; font-family: 'Poppins', sans-serif; border-radius: 0px;">MBA</a>    
 </nav>
       <div class="text">PAYROLL</div>
       <?php
