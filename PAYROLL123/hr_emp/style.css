@@ -193,14 +193,20 @@
   width: calc(100% - 250px);
 }
 .home-section .text{
-  display: inline-block;
   color: #11101d;
   font-size: 40px;
   font-weight: 700;
   margin: 18px
 }
-@media (max-width: 420px) {
-  .sidebar li .tooltip{
-    display: none;
-  }
+
+.hero{
+  width:100%;
+  min-height:100vh;
+  
+}
+.user{
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 8px;
 }

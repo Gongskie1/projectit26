@@ -59,7 +59,9 @@
     </ul>
   </div>
   
-  <section class="home-section">
+  <section class="home-section"><nav class="navbar navbar-dark" style="background:#11101D; height:70px; padding:10px; border-radius:0">
+  <a class="navbar-brand" style="color:white; font-size:30px; font-weight:bold; font-family: 'Poppins', sans-serif; border-radius: 0px;">123 Company</a>    
+</nav>
       <div class="text">Employee List</div>
       <?php
       include 'employee\employee.php'
