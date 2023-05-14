@@ -1,5 +1,6 @@
-<?php include 'editAttendanceDb.php';?>
-<div class="modal fade" id="editAtt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-toggle="modal" aria-hidden="true" data-backdrop="false">
+<?php include 'addAttDb.php';?>
+
+<div class="modal fade" id="addAtt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-toggle="modal" aria-hidden="true" data-backdrop="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -9,7 +10,15 @@
                 <div class="modal-body">
 				<div class="container-fluid">
 				<form method="POST" >
-          <input type="hidden" id="updateAtt" name="rowID" value="">
+          <input type="hidden" id="update" name="rowid" value="">
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:7px;">ID:</label>
+						</div>
+						<div class="col-lg-10">
+							<input id="id" type="text" class="form-control" name="ID" value=""  required>
+						</div>
+					</div>
 					<div style="height:10px;"></div>
 					<!-- <div class="row">
 						<div class="col-lg-2">
@@ -64,7 +73,7 @@
 							<label class="control-label" style="position:relative; top:7px;">Late-Minutes:</label>
 						</div>
 						<div class="col-lg-10">
-						<input type="number" name="late" id="late" style="width: 100%;" value="">
+						<input type="number" name="late" id="late" style="width: 100%;">
 						</div>
 					</div>
 					<div class="row">
@@ -72,7 +81,7 @@
 							<label class="control-label" style="position:relative; top:7px;">Overtime:</label>
 						</div>
 						<div class="col-lg-10">
-						<input type="number" name="overtime" id="overtime" style="width: 100%;" value="">
+						<input type="number" name="overtime" id="overtime" style="width: 100%;">
 						</div>
 					</div>
 					<div class="row">
@@ -91,7 +100,7 @@
 				</div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                    <button type="submit" class="btn btn-primary" name="editAtt"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
+                    <button type="submit" class="btn btn-primary" name="addAtt"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a>
 				</form>
                 </div>
 				

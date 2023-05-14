@@ -4,114 +4,42 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
-/* .main{
-position: relative;
-width: 100%;
-}
-.deduction{
-margin-top: 20px;
-text-transform: capitalize;
-          }
-.deduct-list{
-width: 100%;
-padding: 50px;
-margin-top: 10px;
-border-radius: 0px;
-}
 
-.table{
-border-collapse: collapse;
-margin: 65px 0;
-font-size: 15px;
-min-width: 100%;
-overflow: hidden;
-}
-table thead tr{
-color: #fff;
-background: black;
-text-align: left;
-font-weight: bold;
-}
-.table th,.table td{
-padding: 12px 15px;}
-
-.table tbody tr{
-border-bottom: 1px solid #ddd;
-}
-.table tbody tr:nth-of-type(odd){
-background: #f3f3f3;
-}
-.table button{
-    padding: 6px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    border: 1px solid black;
-    color: black;
-}
-.table button:hover{
-    background-color: black;
-    color: #fff;
-} */
 
 body{
     height: 100vh;
 }
-
-
-.search_form{
+/* TABLE */
+table{
     width: 100%;
-    display: flex;
 }
-.search_form button{
-    padding: 5px;
-    background-color: rgb(37, 243, 47);
-    border-radius: 10px;
-    margin-left: 5px;
-    font-weight: 600;
-}
-.search_form button:hover{
-    opacity: 0.8;
-}
-.search_form button:active{
+thead{
     background-color: black;
-    color:white;
-    border: 1px solid gray;
+    color: white;
+    position: sticky;
+    top: 0;
 }
-.search_form input{
-    margin-right: 5px;
+th{
+    padding: 15px;
 }
-/* PROCESS FORM */
-
-.process_form{
-    height: 100%;
-    margin-top: 10px;
+td{
+    padding: 10px;
+    border-bottom: 1px solid black;
+    font-weight: 700;
 }
-.deductions{
-    display: flex;
+tbody   tr:nth-child(even){
+    background-color: gray;
 }
-.deductions div{
+form{
+  display: flex;
+  align-items: center;
+}
+.date{
     width: 100%;
+    padding: 8px;
 }
-.deductions div span {
-    display: flex;
-    align-items: center;
-}
-.deductions div span p{
-    margin-right: 5px;
-    font-weight: 600;
+.table_container{
     margin-top: 10px;
-}
-.process button{
-    padding: 5px;
-    background-color: rgb(37, 243, 47);
-    border-radius: 10px;
-    margin: 0 0 7px 7px;
-    font-weight: 600;
-    
-}
-
-.deductions .display input{
-    border: 0;
-    outline: none;
-    pointer-events: none;
+    max-height: 100%;
+    overflow-y: auto;
 }

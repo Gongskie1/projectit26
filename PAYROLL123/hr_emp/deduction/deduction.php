@@ -1,10 +1,5 @@
 <?php
-  include 'deduct_new.php';
-  include 'deduction/deductionCreate.php';
-  include 'deduction/editModal.php';
-  include 'deduction/delete.php';
   include 'searchDb.php';
-  include 'payroll.php';
 ?>
 
 
@@ -23,120 +18,93 @@
 <body>
   <div class="container" >
     <form method="post" class="search_form">
-      <input type="date" class="dStart" name="start" required >
-      <input type="date" class="dEnd" name="end" required >
-      <input type="number" placeholder="Employee ID" name="empId" required >
-      <button type="submit" class="search" name="search">SEARCH</button>
+      <div><b>From: </b></div>
+      <input type="date" name="from" required class="date">
+      <div><b>To: </b></div>
+      <input type="date" name="to" required class="date">
+      <button name="process">button</button>
     </form>
+ 
 
-    
-
-    <?php include 'deduction/connect.php';
-
+    <div class="table_container" style="position: relative; max-height: 500px;">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Rate</th>
+          <th>Basic Salary</th>
+          <th>Gross Pay</th>
+          <th>Deduction</th>
+          <th>Net Pay</th>
+          <th>Absent</th>
+          <th>Date</th>
+          <th>Late Minutes</th>
+          <th>Overtime Minutes</th>
+        </tr>
+      </thead>
       
-        
+      <tbody>
+        <?php 
+        if (isset($_POST['process'])) {
+          // Get the selected date range
+          $from = $_POST['from'];
+          $to = $_POST['to'];
+          $sql = "SELECT ID, Name, Position, Rate, basic_salary, gross_pay, totaldeduc, netpay, Absent, LateMinutes, OvertimeMinutes, SSS, pag_ibig, philhealth, date, empID
+          FROM deduction
+          WHERE date = '$to'";
 
-        $sql = "SELECT Attendance_Type, 
-                COUNT(Attendance_Type) `count`  FROM `attendance`  WHERE 
-                `Date`>='$_SESSION[Dstart]'
-                AND  
-                `Date`<='$_SESSION[Dend]'
-                AND
-                empID=$_SESSION[empId]
-                GROUP BY Attendance_Type;";
+          $result = mysqli_query($conn, $sql);
 
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              $id = $row['ID'];
+              $name = $row['Name'];
+              $position = $row['Position'];
+              $rate = $row['Rate'];
+              $basicSalary = $row['basic_salary'];
+              $grossPay = $row['gross_pay'];
+              $totalDeduction = $row['totaldeduc'];
+              $netPay = $row['netpay'];
+              $absent = $row['Absent'];
+              $lateMinutes = $row['LateMinutes'];
+              $overtimeMinutes = $row['OvertimeMinutes'];
+              $sss = $row['SSS'];
+              $pagIbig = $row['pag_ibig'];
+              $philhealth = $row['philhealth'];
+              $date = $row['date'];
+              $empID = $row['empID'];
 
-        $result = mysqli_query($conn, $sql);
+        ?>
 
-        
-
-        $json = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        //print_r($json);
-        //echo mysqli_num_rows($result);
-
-        $present = 0;
-        $late = 0;
-        $absent = 0;
-        $early = 0;
-
-        if (isset($_POST['search'])) {
-          if(count($json)>0){
-            foreach ($json as $row) {
-              if($row['Attendance_Type'] == 'Absent') $absent = $row['count'] ;
-              if($row['Attendance_Type'] == 'Present') $present = $row['count'] ;
-              if($row['Attendance_Type'] == 'Late'  ) $late = $row['count'] ;
-              if($row['Attendance_Type'] == 'Early Leav'  ) $early = $row['count'] ;
-            }
+        <tr>
+          <td><?php echo $empID;?></td>
+          <td><?php echo $name;?></td>
+          <td><?php echo $position;?></td>
+          <td><?php echo $rate;?></td>
+          <td><?php echo $basicSalary;?></td>
+          <td><?php echo $grossPay;?></td>
+          <td><?php echo $totalDeduction;?></td>
+          <td><?php echo $netPay;?></td>
+          <td><?php echo $absent;?></td>
+          <td><?php echo $date;?></td>
+          <td><?php echo $lateMinutes;?></td>
+          <td><?php echo $overtimeMinutes;?></td>
+      </tr>
+        <?php 
           }
+        } else {
+          echo "No records found for the selected date range.";
         }
-        
-        
-        
-    ?>
-
-    <form method="post" class="process_form">
-      <input type="hidden" name="empId" value="<?php echo $_SESSION['empId'];?>">
-      <div class="deductions">
-        <div class="display">
-          <span>
-            <p>Present:</p> 
-            <input type="text" name="present" value="<?php echo $present;?>">
-          </span>
-
-          <span>
-            <p>Late/Early Out:</p>  
-            <input type="text" name="late" value="<?php echo $late; ?>">
-          </span>
-
-          <span>
-            <p>Absent:</p>  
-            <input type="text" name="absent" value="<?php echo $absent;?>">
-          </span>
-          <span>
-            <p>Early Leave:</p>  
-            <input type="text" name="early" value="<?php echo $early;?>">
-          </span>
-
-        </div>
-      
-        
+      }
+        ?>
      
-        <div>
-          <span>
-            <p>SSS:</p>  
-            <input type="number" name="SSS" required>
-          </span>
 
-          <span>
-            <p>Pag-Ibig:</p>  
-            <input type="number" name="love"  required>
-          </span>
-
-          <span>
-            <p>Tax:</p> 
-            <input type="number" name="tax"  required>
-          </span>
-
-          <span>
-            <p>Philhealth:</p>  
-            <input type="number" name="Philhealth"  required>
-          </span>
-        </div>
-
-      </div>
-
-      <div class="process" style="display:flex; align-items:center; justify-content:space-between; font-weight:700;">
-        <h2>
-          Name:<?php echo $_SESSION['name']?><br>
-          Basic:<?php echo $_SESSION['basic']?><br>
-          Deduction:<?php echo $_SESSION['deduction']?><br>
-          Netpay:<?php echo $_SESSION['total']?>
-          
-        </h2>
-        <button type="submit" name="process">PROCESS</button>
-      </div>
-    </form>
-
+      </tbody>
+    </table>
+    </div>
+    
 
   </div>
 </body>

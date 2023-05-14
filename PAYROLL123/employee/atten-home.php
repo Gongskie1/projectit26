@@ -19,7 +19,7 @@
     <title>PAYROLL</title>
 </head>
 
-<body onload="initClock()">
+<body>
 <div class="sidebar">
     <div class="details">
         <div class="name">Company</div>
@@ -69,12 +69,6 @@
 include 'attendance\attendance.php'
 ?>
 </section>
-
-
-
-<script src="attendance\atten.js"></script>
-
-
 
 
 </body>

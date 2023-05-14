@@ -5,6 +5,10 @@ if (isset($_POST['save'])) {
   $Lname = $_POST['lastname'];
   $gender = $_POST['gender'];
   $rate = $_POST['rate'];
+  $SSS = $_POST['SSS'];
+  $pag_ibig = $_POST['pag_ibig'];
+  $tax = $_POST['tax'];
+  $philhealth = $_POST['philhealth'];
   $position = $_POST['position'];
   $email = $_POST['email'];
   $username = $_POST['username'];
@@ -28,12 +32,16 @@ if ($resultE) {
       echo  "<script>alert('The Username is already Exist')</script>";
   }else {
     $sql = "INSERT INTO `addemployee`
-    (`Fname`, `Lname`, `gender`, `rate`, `position`, `email`, `username`, `password`) 
+    (`Fname`, `Lname`, `gender`, `rate`, `SSS`, `pag_ibig`, `tax`, `philhealth`, `position`, `email`, `username`, `password`) 
     VALUES (
     '$Fname',
     '$Lname',
     '$gender',
     '$rate',
+    '$SSS',
+    '$pag_ibig',
+    '$tax',
+    '$philhealth',
     '$position',
     '$email',
     '$username',

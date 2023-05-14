@@ -50,6 +50,38 @@
 							<input type="number" class="form-control" name="rate"required style="margin-top: 10px;">
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:15px;">SSS:</label>
+						</div>
+						<div class="col-lg-10">
+							<input type="number" class="form-control" name="SSS"required style="margin-top: 10px;">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:15px;">Pag-Ibig:</label>
+						</div>
+						<div class="col-lg-10">
+							<input type="number" class="form-control" name="pag_ibig"required style="margin-top: 10px;">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:15px;">Tax:</label>
+						</div>
+						<div class="col-lg-10">
+							<input type="number" class="form-control" name="tax"required style="margin-top: 10px;">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:15px;">Philhealth:</label>
+						</div>
+						<div class="col-lg-10">
+							<input type="number" class="form-control" name="philhealth"required style="margin-top: 10px;">
+						</div>
+					</div>
 					<div style="height:10px;"></div>
 					<div class="row">
 						<div class="col-lg-2">
@@ -60,6 +92,7 @@
 								<option value="HR">HR</option>
 								<option value="FRONT-END">FRONT-END </option>
 								<option value="BACK-END">BACK-END</option>
+								<option value="acounting">Accounting</option>
 							</select>
 						</div>
 					</div>

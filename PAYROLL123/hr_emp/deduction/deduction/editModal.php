@@ -1,11 +1,11 @@
 <?php 
 
-include 'edit.php';
+// include 'edit.php';
 
 
 ?>
 
-<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+<!-- <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -44,4 +44,4 @@ include 'edit.php';
 				
             </div>
         </div>
-    </div>
+    </div> -->

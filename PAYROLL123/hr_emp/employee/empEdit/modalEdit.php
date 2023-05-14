@@ -1,6 +1,6 @@
 <?php include 'editEmp.php';?>
 
-<div class="modal fade" id="editEmp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+<div class="modal fade" id="editEmp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-toggle="modal" aria-hidden="true" data-backdrop="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -48,6 +48,38 @@
 							<input id="Rate" type="combo" class="form-control" name="rate" value="" required>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:7px;">SSS:</label>
+						</div>
+						<div class="col-lg-10">
+							<input id="sss" type="combo" class="form-control" name="ssS" value="" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:7px;">Pag_Ibig:</label>
+						</div>
+						<div class="col-lg-10">
+							<input id="pag_ibig" type="combo" class="form-control" name="pag_ibig" value="" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:7px;">Tax:</label>
+						</div>
+						<div class="col-lg-10">
+							<input id="tax" type="combo" class="form-control" name="tax" value="" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2">
+							<label class="control-label" style="position:relative; top:7px;">Philhealth:</label>
+						</div>
+						<div class="col-lg-10">
+							<input id="philhealth" type="combo" class="form-control" name="philhealth" value="" required>
+						</div>
+					</div>
 					<div style="height:10px;"></div>
 					<div class="row">
 						<div class="col-lg-2">
@@ -56,8 +88,9 @@
 						<div class="col-lg-10">
 						<select name="position" id="Position" style="width: 100%;">
 								<option value="HR">HR</option>
-								<option value="FRONT-END">FRONT-END </option>
+								<option value="FRONT-END">FRONT-END</option>
 								<option value="BACK-END">BACK-END</option>
+								<option value="acounting">acounting</option>
 							</select>
 						</div>
 					</div>

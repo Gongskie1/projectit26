@@ -29,7 +29,7 @@
        <i class='bx bx-file'></i>
          <span class="links_name">Deduction</span>
        </a>
-       <span class="tooltip">Deductions</span>
+       <span class="tooltip">Accountant</span>
      </li>
      <li>
        <a href="attendance_form.php">

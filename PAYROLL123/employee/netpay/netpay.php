@@ -18,61 +18,82 @@
 <section class="container">
   
   <div class="users">
-    <div class="card">
-           <br>
-           <br>
-            <h4>DEDUCTIONS</h4>
-            <div class="per">
-              <table>
-                <tr>
-                  <td><span class="date"><?php echo $_SESSION['date']?></span></td>
-                </tr>
-                <tr>
-                  <td>Year/Month/Day</td>
-                </tr>
-                <br>
-                <h1 class="deductions"><?php echo $_SESSION['deductions']?></h1>
-              </table>
-            </div>
-            
-          </div>
-          <div class="card">
-            <br><br>
-            <h4>NET PAY</h4>
-            <div class="per">
-              <table>
-                <tr>
-                  <td><span class="date"><?php echo $_SESSION['date']?></span></td>
-                </tr>
-                <tr>
-                  <td>Year/Month/Day</td>
-                </tr>
-                <br>
-                  <h1 class="netpay"><?php echo $_SESSION['netPay']?></h1>
-              </table>
-            </div>
-              <div>
-
+  <div class="payslip">
+    <div class="payslip-header">
+      <h2>Payslip</h2>
+    </div>
+    <table class="payslip-table">
+      <tr>
+        <th>Name:</th>
+        <td colspan="3"><?php echo $_SESSION['name'];?></td>
+      </tr>
+      <tr>
+        <th>Position:</th>
+        <td class="amount"><?php echo $_SESSION['position'];?></td>
+        <th>Rate:</th>
+        <td class="amount"><?php echo $_SESSION['rate'];?></td>
+      </tr>
+      <tr>
+        <th>Basic Salary:</th>
+        <td class="amount"><?php echo $_SESSION['basic_salary'];?></td>
+        <th>Gross Pay:</th>
+        <td class="amount"><?php echo $_SESSION['grosspay'];?></td>
+      </tr>
+      <tr>
+        <th>Total Deduction:</th>
+        <td class="amount"><?php echo $_SESSION['deductions'];?></td>
+        <th>Net Pay:</th>
+        <td class="amount"><?php echo $_SESSION['netpay'];?></td>
+      </tr>
+      <tr>
+        <th>Overtime Minutes:</th>
+        <td class="amount"><?php echo $_SESSION['OvertimeMinutes'];?></td>
+        <th>Late Minutes:</th>
+        <td class="amount"><?php echo $_SESSION['LateMinutes'];?></td>
+      </tr>
+      <tr>
+        <th>Employee ID:</th>
+        <td class="amount"><?php echo $_SESSION['employeeId'];?></td>
+        <th>SSS:</th>
+        <td class="amount"><?php echo $_SESSION['SSS'];?></td>
+      </tr>
+      <tr>
+        <th>Pag-Ibig:</th>
+        <td class="amount"><?php echo $_SESSION['pag_ibig'];?></td>
+        <th>Philhealth:</th>
+        <td class="amount"><?php echo $_SESSION['philhealth'];?></td>
+      </tr>
+      <tr>
+        <th>Absent:</th>
+        <td class="amount"><?php echo $_SESSION['Absent'];?></td>
+        <th>Date:</th>
+        <td class="amount"><?php echo $_SESSION['date'];?></td>
+      </tr>
+      
+    </table>
+    <div class="refreshCont">
               
-                <form method="post">
-                  <select name="avail_pay">
+                <form method="GET">
+                  <select name="avail_pay" class="select">
+                    <option value="0">Select Here</option>
                   <?php include 'connection.php';
 
-                    $sql = "SELECT * FROM `payroll` WHERE empID=$_SESSION[emp_id]";
+                    $sql = "SELECT * FROM `deduction` WHERE empID=$_SESSION[emp_id]";
                     $result = $conn->query($sql);
 
                     while($row = $result->fetch_assoc()){ ?>
   
-                    <option value="<?php echo $row['Date']?>"><?php echo $row['Date']?></option>
+                    <option value="<?php echo $row['date']?>"><?php echo $row['date']?></option>
                     <?php }?>    
                   </select>
                   <button name="refresh" class="refresh">Refresh</button>
                 </form>  
                          
               </div>
-          </div>   
+  </div>
+              
+    </div>   
   
-    </div>
   </div>
   </section>
 

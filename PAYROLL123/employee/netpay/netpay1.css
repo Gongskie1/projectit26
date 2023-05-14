@@ -11,62 +11,46 @@
     max-width:200%;
     min-width:95%;
     margin-bottom:100%; 
+    
   }
   .container .form-control{
     width: 110px;
       height: 32px;
   }
-  label{
-    text-align:right;
-    clear:both;
-    float:left;
-    margin-right:15px;
-    margin-left: 15px;
+
+  .payslip {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
-  .group{
-    display:flex;  
-    justify-content: center; 
-      align-items: baseline;
-      
-  }
-  
-  
-  .users{
-    display: flex;
-    width: 100%;
-    justify-content:center;
-  }
-  .users .card{
-      width: 35%;
-      margin: 57px;
-    background: #fff;
+
+  .payslip-header {
     text-align: center;
-    border-radius: 15px;
-    padding: 10px;
-    border: 1px solid black;
-    margin-left:35px;
-    
+    margin-bottom: 20px;
   }
-  
-  .users .card h4{
-    text-transform: uppercase;
-    font-size: 25px;
-    font-family: sans-serif;
-    font-weight: 600;
+
+  .payslip-header h2 {
+    margin: 0;
   }
-  .users .card p{
-    font-size: 12px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+
+  .payslip-table {
+    width: 100%;
+    border-collapse: collapse;
   }
-  .users table{
-    margin:  auto;
+
+  .payslip-table td, .payslip-table th {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
   }
-  
-  .users td{
-    font-size: 14px;
-    padding-right: 15px;
-    text-align:center;
+
+  .payslip-table th {
+    text-align: left;
+  }
+
+  .payslip-table td.amount {
+    text-align: right;
   }
 
   button{
@@ -81,4 +65,19 @@
   button:active{
     background-color: gray;
     color: black;
+  }
+  .refreshCont{
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    
+  }
+ 
+  .refresh{
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .select{
+    padding: 5px;
+    border-radius: 10px;
   }

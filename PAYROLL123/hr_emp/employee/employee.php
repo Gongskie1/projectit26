@@ -21,12 +21,7 @@
         <div class="emp-list">
             <span class="pull-right"><a id="add_new" href="#addnew" data-toggle="modal" class="btn btn-primary">
             <span class="glyphicon glyphicon-plus"></span> New Employee</a></span>
-        <div class="box">
-            <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
+        
     <table class="table">
           <thead>
               <tr>
@@ -35,6 +30,10 @@
                 <th>Last Name</th>
                 <th>Gender</th>
                 <th>Rate</th>
+                <th>SSS</th>
+                <th>Pag_Ibig</th>
+                <th>TAX</th>
+                <th>Philhealth</th>
                 <th>Position</th>
                 <th>Email Address</th>
                 <th>Action</th>
@@ -58,6 +57,10 @@
                   <td id="Lname<?php echo $row['id'];?>"><?php  echo $row['Lname'];?></td>
                   <td id="Gender<?php echo $row['id'];?>"><?php echo $row['gender']?></td>
                   <td id="Rate<?php echo $row['id'];?>"><?php echo $row['rate'];?></td>
+                  <td id="sss<?php echo $row['id'];?>"><?php echo $row['SSS'];?></td>
+                  <td id="pag_ibig<?php echo $row['id'];?>"><?php echo $row['pag_ibig'];?></td>
+                  <td id="tax<?php echo $row['id'];?>"><?php echo $row['tax'];?></td>
+                  <td id="philhealth<?php echo $row['id'];?>"><?php echo $row['philhealth'];?></td>
                   <td id="Position<?php echo $row['id'];?>"><?php  echo $row['position'];?></td>
                   <td id="Email<?php echo $row['id'];?>"><?php echo $row['email'];?></td>
                   <td>
@@ -92,6 +95,10 @@
               let Lname = $('#Lname'+id).text();
               let Gender = $('#Gender'+id).text();
               let Rate = $('#Rate'+id).text();
+              let sss = $('#sss'+id).text();
+              let pag__ibig = $('#pag_ibig'+id).text();
+              let tax = $('#tax'+id).text();
+              let philhealth = $('#philhealth'+id).text();
               let Position = $('#Position'+id).text();
               let Email = $('#Email'+id).text();
               
@@ -105,6 +112,10 @@
               $('#Lastname').val(Lname);
               $('#Gender').val(Gender);
               $('#Rate').val(Rate);
+              $('#sss').val(sss);
+              $('#pag_ibig').val(pag__ibig);
+              $('#tax').val(tax);
+              $('#philhealth').val(philhealth);
               $('#Position').val(Position);
               $('#Email').val(Email);
 

@@ -1,5 +1,5 @@
 <!-- Add New -->
-
+<!-- 
 <div class="modal fade" id="addnew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -38,4 +38,4 @@
 				
             </div>
         </div>
-    </div>
+    </div> -->

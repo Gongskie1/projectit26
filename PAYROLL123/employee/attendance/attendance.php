@@ -17,7 +17,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="attendance.css">
+    <style>
+      <?php include "attendance.css"?>
+    </style>
     <title>PAYROLL</title>
 </head>
 <body >
@@ -26,9 +28,14 @@
     <div class="attendance col-lg-12">
         <div class="atten">
         
-        <div class="btn">
-          <button class="att" style="background:#86FF45; text-align:center; width:150px">Attendance</button>
-      </div>
+        <form action="" method="post" style="display: flex; justify-content: space-between; width: 100%;">
+          <button id="in" style="background:#86FF45; text-align:center; width:150px" value="<?php echo $_SESSION['emp_id']?>" name="time_in">Time_In</button>
+          <input type="hidden" value="" id="time_in" name="in">
+          <button id="out" style="background: red;; text-align:center; width:150px" value="<?php echo $_SESSION['emp_id']?>" name="time_out">Time_Out</button>
+          <input type="hidden" value="" id="time_out" name="out">
+          <button type="submit" id="submit" style="background: red;; text-align:center; width:150px" value="<?php echo $_SESSION['emp_id']?>" name="submit">submit</button>
+        </form>
+
       </div>
 
 <table id="customers">
@@ -36,6 +43,8 @@
     <th>DATE</th>
     <th>TIME IN</th>
     <th>TIME OUT</th>
+    <th>Late Minutes</th>
+    <th>Overtime Minutes</th>
     <th>Attendance_Type</th>
   </tr>
   <tr>
@@ -62,6 +71,8 @@
         echo "<td>" . $row["Date"] . "</td>";
         echo "<td>" . $row["Time_In"] . "</td>";
         echo "<td>" . $row["Time_Out"] . "</td>";
+        echo "<td>" . $row["lateminutes"] . "</td>";
+        echo "<td>" . $row["overtime"] . "</td>";
         echo "<td>" . $row["Attendance_Type"] . "</td>";
         echo "</tr>";
       }
@@ -80,7 +91,7 @@
 
 
 
-
+<!-- 
 <div class="container" style="display: none;">
       <h1>Insert Attendance Data</h1>
       <form method="post" >
@@ -109,14 +120,60 @@
         </div>
         <button class="ins" type="submit" class="btn btn-primary" name="insert">Insert Data</button>
       </form>
-    </div>
+    </div> -->
 
     <script>
       $(document).ready(function(){
-          $(".att").click(function(){
-        $(".container").toggle();
+          $("#out").attr("disabled", true);
+          
+
+          $("#in").click(function(){
+            var d = new Date();
+            var hours = d.getHours() % 12 || 12;
+            var minutes = d.getMinutes();
+            var am_pm = (d.getHours() >= 12) ? "PM" : "AM";
+
+            // Add leading 0 to hours if it's a single digit number
+            if (hours < 10) {
+              hours = "0" + hours;
+            }
+
+            // Add leading 0 to minutes if it's a single digit number
+            if (minutes < 10) {
+              minutes = "0" + minutes;
+            } // uppercase "PM" or "AM"
+
+            
+            $("#time_in").val(hours+":"+minutes+am_pm);
+            $("#in").attr("disabled", true);
+            $("#out").attr("disabled", false);
+          });
+
+
+          $("#out").click(function(){
+            var d = new Date();
+            var hours = d.getHours() % 12 || 12;
+            var minutes = d.getMinutes();
+            var am_pm = (d.getHours() >= 12) ? "PM" : "AM";
+
+            // Add leading 0 to hours if it's a single digit number
+            if (hours < 10) {
+              hours = "0" + hours;
+            }
+
+            // Add leading 0 to minutes if it's a single digit number
+            if (minutes < 10) {
+              minutes = "0" + minutes;
+            } // uppercase "PM" or "AM"
+
+            
+            $("#time_out").val(hours+":"+minutes+am_pm);
+            $("#out").attr("disabled", true);
+            
+          });
+
+          
       });
-});
 
 let subMenu = document.getElementById("subMenu");
 
