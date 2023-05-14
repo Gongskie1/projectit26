@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="deduction\deduct.css">
+    <link rel="stylesheet" href="deduction/deduct.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,7 +65,7 @@
 </nav>
       <div class="text">PAYROLL</div>
       <?php
-        include 'deduction\deduction.php'
+        include 'deduction/deduction.php'
       ?>
   </section>
   

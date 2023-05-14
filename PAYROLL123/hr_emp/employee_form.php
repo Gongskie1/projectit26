@@ -7,7 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="employee\emp.css">
+     <link rel="stylesheet" href="employee/emp.css">
     </head>
 
 <body>
@@ -66,7 +66,7 @@
 </nav>
       <div class="text">Employee List</div>
       <?php
-      include 'employee\employee.php'
+      include 'employee/employee.php'
       ?>
   </section>
   

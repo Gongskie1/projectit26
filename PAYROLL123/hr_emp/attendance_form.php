@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="attendance\attendance.css">
+    <link rel="stylesheet" href="attendance/attendance.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,7 +71,7 @@
 </nav>
       <div class="text">Attendance</div>
       <?php
-      include 'attendance\attendance.php'
+      include 'attendance/attendance.php'
       ?>
   </section>
   
